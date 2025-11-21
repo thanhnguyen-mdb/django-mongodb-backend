@@ -42,7 +42,8 @@ jobs:
           source .venv/bin/activate
           pip install -r requirements.txt
           pip install .
-          npx @cyclonedx/cdxgen -t python --json-pretty -o sbom.json
+          npx @cyclonedx/cdxgen@11.0.0 -t python --spec-version 1.5 -o sbom.json
+          jq . sbom.json > sbom.json.tmp && mv sbom.json.tmp sbom.json
         env:
           FETCH_LICENSE: true
 

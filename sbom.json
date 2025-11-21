@@ -1,12 +1,390 @@
 {
-  "metadata": {
-    "timestamp": "2024-11-05T12:48:05.688090+00:00"
-  },
-  "components": [],
-  "serialNumber": "urn:uuid:f3728d07-e448-4fae-8e28-c08f8c75f747",
-  "version": 1,
-  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "vulnerabilities": []
+  "serialNumber": "urn:uuid:b5818865-c808-4225-8a16-1945c4fcd122",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-11-21T23:06:53Z",
+    "tools": {
+      "components": [
+        {
+          "group": "@cyclonedx",
+          "name": "cdxgen",
+          "version": "11.0.0",
+          "purl": "pkg:npm/%40cyclonedx/cdxgen@11.0.0",
+          "type": "application",
+          "bom-ref": "pkg:npm/@cyclonedx/cdxgen@11.0.0",
+          "author": "OWASP Foundation",
+          "publisher": "OWASP Foundation"
+        }
+      ]
+    },
+    "authors": [
+      {
+        "name": "OWASP Foundation"
+      }
+    ],
+    "lifecycles": [
+      {
+        "phase": "build"
+      }
+    ],
+    "component": {
+      "name": "django-mongodb-backend",
+      "description": "Django MongoDB Backend",
+      "version": "latest",
+      "type": "application",
+      "bom-ref": "pkg:pypi/django-mongodb-backend@latest",
+      "purl": "pkg:pypi/django-mongodb-backend@latest"
+    },
+    "properties": [
+      {
+        "name": "cdx:bom:componentTypes",
+        "value": "pypi"
+      }
+    ]
+  },
+  "components": [
+    {
+      "author": "\"Guido van Rossum, Jukka Lehtosalo, Łukasz Langa, Michael Lee\" <levkivskyi@gmail.com>",
+      "group": "",
+      "name": "typing-extensions",
+      "version": "4.15.0",
+      "description": "Backported and Experimental Type Hints for Python 3.9+",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+        }
+      ],
+      "licenses": [],
+      "purl": "pkg:pypi/typing-extensions@4.15.0",
+      "type": "library",
+      "bom-ref": "pkg:pypi/typing-extensions@4.15.0",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 1,
+          "methods": [
+            {
+              "technique": "instrumentation",
+              "confidence": 1,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/.venv"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        }
+      ]
+    },
+    {
+      "author": "Django Software Foundation <foundation@djangoproject.com>",
+      "group": "",
+      "name": "Django",
+      "version": "5.2.8",
+      "description": "A high-level Python web framework that encourages rapid development and clean, pragmatic design.",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "37e687f7bd73ddf043e2b6b97cfe02fcbb11f2dbb3adccc6a2b18c6daa054d7f"
+        }
+      ],
+      "licenses": [],
+      "purl": "pkg:pypi/django@5.2.8",
+      "type": "framework",
+      "bom-ref": "pkg:pypi/django@5.2.8",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 1,
+          "methods": [
+            {
+              "technique": "instrumentation",
+              "confidence": 1,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/.venv"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        }
+      ]
+    },
+    {
+      "author": "Andi Albrecht <albrecht.andi@gmail.com>",
+      "group": "",
+      "name": "sqlparse",
+      "version": "0.5.3",
+      "description": "A non-validating SQL parser.",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "0BSD",
+            "url": "https://opensource.org/licenses/0BSD"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/sqlparse@0.5.3",
+      "type": "library",
+      "bom-ref": "pkg:pypi/sqlparse@0.5.3",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 0.8,
+          "methods": [
+            {
+              "technique": "manifest-analysis",
+              "confidence": 0.8,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        }
+      ]
+    },
+    {
+      "author": "Django Software Foundation <foundation@djangoproject.com>",
+      "group": "",
+      "name": "asgiref",
+      "version": "3.11.0",
+      "description": "ASGI specs, helper code, and adapters",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1db9021efadb0d9512ce8ffaf72fcef601c7b73a8807a1bb2ef143dc6b14846d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "0BSD",
+            "url": "https://opensource.org/licenses/0BSD"
+          }
+        },
+        {
+          "license": {
+            "id": "BSD-3-Clause",
+            "url": "https://opensource.org/licenses/BSD-3-Clause"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/asgiref@3.11.0",
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/django/asgiref/"
+        }
+      ],
+      "type": "library",
+      "bom-ref": "pkg:pypi/asgiref@3.11.0",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 0.8,
+          "methods": [
+            {
+              "technique": "manifest-analysis",
+              "confidence": 0.8,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        }
+      ]
+    },
+    {
+      "author": "The MongoDB Python Team",
+      "group": "",
+      "name": "django-mongodb-backend",
+      "version": "latest",
+      "description": "Django MongoDB Backend",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/django-mongodb-backend@latest",
+      "type": "framework",
+      "bom-ref": "pkg:pypi/django-mongodb-backend@latest",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 1,
+          "methods": [
+            {
+              "technique": "instrumentation",
+              "confidence": 1,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/.venv"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        },
+        {
+          "name": "cdx:pypi:latest_version",
+          "value": "5.2.3"
+        },
+        {
+          "name": "cdx:pypi:resolved_from",
+          "value": "django-mongodb-backend"
+        }
+      ]
+    },
+    {
+      "author": "The MongoDB Python Team",
+      "group": "",
+      "name": "pymongo",
+      "version": "4.15.4",
+      "description": "PyMongo - the Official MongoDB Python driver",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "84c7c7624a1298295487d0dfd8dbec75d14db44c017b5087c7fe7d6996a96e3d"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "url": "https://opensource.org/licenses/Apache-2.0"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/pymongo@4.15.4",
+      "type": "library",
+      "bom-ref": "pkg:pypi/pymongo@4.15.4",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 0.8,
+          "methods": [
+            {
+              "technique": "manifest-analysis",
+              "confidence": 0.8,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        }
+      ]
+    },
+    {
+      "author": "Bob Halley <halley@dnspython.org>",
+      "group": "",
+      "name": "dnspython",
+      "version": "2.8.0",
+      "description": "DNS toolkit",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "01d9bbc4a2d76bf0db7c1f729812ded6d912bd318d3b1cf81d30c0f845dbf3af"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "url": "https://opensource.org/licenses/ISC"
+          }
+        }
+      ],
+      "purl": "pkg:pypi/dnspython@2.8.0",
+      "type": "library",
+      "bom-ref": "pkg:pypi/dnspython@2.8.0",
+      "evidence": {
+        "identity": {
+          "field": "purl",
+          "confidence": 0.8,
+          "methods": [
+            {
+              "technique": "manifest-analysis",
+              "confidence": 0.8,
+              "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+            }
+          ]
+        }
+      },
+      "properties": [
+        {
+          "name": "SrcFile",
+          "value": "/home/runner/work/django-mongodb-backend/django-mongodb-backend/requirements.txt"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:pypi/typing-extensions@4.15.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/sqlparse@0.5.3",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/asgiref@3.11.0",
+      "dependsOn": [
+        "pkg:pypi/typing-extensions@4.15.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/django@5.2.8",
+      "dependsOn": [
+        "pkg:pypi/asgiref@3.11.0",
+        "pkg:pypi/sqlparse@0.5.3"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/pymongo@4.15.4",
+      "dependsOn": [
+        "pkg:pypi/dnspython@2.8.0"
+      ]
+    },
+    {
+      "ref": "pkg:pypi/dnspython@2.8.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:pypi/django-mongodb-backend@latest",
+      "dependsOn": [
+        "pkg:pypi/django@5.2.8",
+        "pkg:pypi/pymongo@4.15.4"
+      ]
+    }
+  ]
 }

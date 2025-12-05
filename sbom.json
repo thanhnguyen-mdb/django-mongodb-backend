@@ -1,7 +1,7 @@
 {
   "components": [
     {
-      "bom-ref": "Django==5.2.9",
+      "bom-ref": "Django==6.0",
       "description": "A high-level Python web framework that encourages rapid development and clean, pragmatic design.",
       "externalReferences": [
         {
@@ -43,9 +43,9 @@
         }
       ],
       "name": "Django",
-      "purl": "pkg:pypi/django@5.2.9",
+      "purl": "pkg:pypi/django@6.0",
       "type": "library",
-      "version": "5.2.9"
+      "version": "6.0"
     },
     {
       "bom-ref": "asgiref==3.11.0",
@@ -254,14 +254,14 @@
         "asgiref==3.11.0",
         "sqlparse==0.5.4"
       ],
-      "ref": "Django==5.2.9"
+      "ref": "Django==6.0"
     },
     {
       "ref": "asgiref==3.11.0"
     },
     {
       "dependsOn": [
-        "Django==5.2.9",
+        "Django==6.0",
         "pymongo==4.15.5"
       ],
       "ref": "django-mongodb-backend==5.2.4.dev0"
@@ -280,7 +280,7 @@
     }
   ],
   "metadata": {
-    "timestamp": "2025-12-05T15:51:33.727939+00:00",
+    "timestamp": "2025-12-05T16:00:25.591881+00:00",
     "tools": {
       "components": [
         {
@@ -382,7 +382,7 @@
       ]
     }
   },
-  "serialNumber": "urn:uuid:4ca20cf8-ecd9-43fa-989a-6ec91946b89d",
+  "serialNumber": "urn:uuid:a2b91db3-c89f-4866-b4f8-50e2eaba623a",
   "version": 1,
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",

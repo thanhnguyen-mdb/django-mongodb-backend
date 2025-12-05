@@ -33,7 +33,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: "3.10"
+          python-version: "3.x"
       - name: Generate SBOM
         run: |
           python -m venv .venv
@@ -45,15 +45,38 @@ jobs:
           python -m venv .venv-sbom
           source .venv-sbom/bin/activate
           pip install cyclonedx-bom==7.2.1
-          cyclonedx-py environment --spec-version 1.5 --output-format JSON --output-file sbom.json .venv
+          cyclonedx-py environment --spec-version 1.5 --output-format JSON --output-file sbom-new.json .venv
           # Add PURL for django-mongodb-backend (local package doesn't get PURL automatically)
-          jq '(.components[] | select(.name == "django-mongodb-backend" and .purl == null)) |= (. + {purl: ("pkg:pypi/django-mongodb-backend@" + .version)})' sbom.json > sbom.tmp.json && mv sbom.tmp.json sbom.json
+          jq '(.components[] | select(.name == "django-mongodb-backend" and .purl == null)) |= (. + {purl: ("pkg:pypi/django-mongodb-backend@" + .version)})' sbom-new.json > sbom.tmp.json && mv sbom.tmp.json sbom-new.json
       - name: Download CycloneDX CLI
         run: |
           curl -L -s -o /tmp/cyclonedx "https://github.com/CycloneDX/cyclonedx-cli/releases/download/v0.29.1/cyclonedx-linux-x64"
           chmod +x /tmp/cyclonedx
       - name: Validate SBOM
-        run: /tmp/cyclonedx validate --input-file sbom.json --fail-on-errors
+        run: /tmp/cyclonedx validate --input-file sbom-new.json --fail-on-errors
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [ -f sbom.json ]; then
+            echo "Comparing new SBOM with existing sbom.json..."
+            # Use cyclonedx diff to check for component changes
+            DIFF_OUTPUT=$(/tmp/cyclonedx diff sbom.json sbom-new.json --component-versions)
+
+            # Check if there are meaningful changes (output contains more than just "None")
+            if echo "$DIFF_OUTPUT" | grep -q "^None$"; then
+              echo "No component changes detected (only metadata differs)"
+              echo "Keeping existing sbom.json"
+              rm sbom-new.json
+            else
+              echo "Component changes detected:"
+              echo "$DIFF_OUTPUT"
+              echo "Updating sbom.json"
+              mv sbom-new.json sbom.json
+            fi
+          else
+            echo "No existing sbom.json found, creating initial version"
+            mv sbom-new.json sbom.json
+          fi
       - name: Cleanup
         if: always()
         run: rm -rf .venv .venv-sbom
